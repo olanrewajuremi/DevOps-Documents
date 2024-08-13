@@ -1,0 +1,15 @@
+Jenkins is a CICD Server.
+
+CICD server is used to automate, build and deploy artifacts | projects
+
+===============Why use CICD Automation================
+
+To avoid manual build and deployment process 
+
+- Challenges in manual process include
+
+-Everyday we need to do deployments
+-Multiple times we need to deployments
+-In multiple environments we need to do deployments
+-Daily repeated work
+-Error prone
