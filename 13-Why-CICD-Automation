@@ -39,4 +39,5 @@ pipeline {     // Pipeline is a combination of multiple stages. Each stage perfo
           sh 'docker run -d -p 9000:8080 img'
         }
       }
-}
+    }
+  }
