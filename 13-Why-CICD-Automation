@@ -12,4 +12,31 @@ To avoid manual build and deployment process
 -Multiple times we need to deployments
 -In multiple environments we need to do deployments
 -Daily repeated work
--Error prone
+-Error prone 
+
+pipeline {     // Pipeline is a combination of multiple stages. Each stage perfomes one operation depending on the commnad that is passed.
+
+  agent any   // This means I want to execute my job in any of the slave machines. we have master and slaves m/cs. (vm-1 or vm-2)
+
+    stages {
+      stage ('git clone'){
+        steps{
+          git 'url'
+        }
+     }
+      stage ('build') {
+        steps{
+          sh 'mvn clean package'
+        }
+      }
+      stage ('docker image'){
+        steps{
+          sh 'docker build -t img .'
+        }
+      }
+      stage ('deployment'){
+        steps{
+          sh 'docker run -d -p 9000:8080 img'
+        }
+      }
+}
